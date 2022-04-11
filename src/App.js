@@ -1,11 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// import useTheme from './components/Context/useTheme';
+import './myStyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Header from './components/Header/Header';
+// import Footer from './components/Footer/Footer';
 
 function App() {
+  // const theme = useTheme();
+  // console.log(theme)
   return (
-    <div className="App">
-      <h3>Hello world</h3>
-    </div>
+    <div>
+      <h1>Hello world</h1>
+      {/* <Header />
+      <Footer /> */}
+    </div >
   );
 }
 
