@@ -10,7 +10,7 @@ const Footer = () => {
             <div className='bg mh-100 bg-dark text-white'>
                 <Container className='p-5'>
                     <div className='row'>
-                        <div className=" col-md-6 col-lg-3 mt-3">
+                        <div className=" col-md-6 col-lg-3 mt-5">
                             <div>
                                 <div className='mb-3'>
                                     <img style={{ width: '50%' }} src={logo} alt="" />
@@ -18,7 +18,7 @@ const Footer = () => {
                                 <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, veniam?</small>
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-3 mt-3">
+                        <div className="col-md-6 col-lg-3 mt-5">
                             <h6>Address</h6>
                             <div className='footer-icon'>
                                 <i class="fa-solid fa-location-dot"></i>
@@ -37,7 +37,7 @@ const Footer = () => {
                                 <small>ceramics@gmail.com</small>
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-3 mt-3">
+                        <div className="col-md-6 col-lg-3 mt-5">
                             <h6>Social Media</h6>
                             <div className='footer-icon'>
                                 <i class="fa-brands fa-facebook"></i>
@@ -57,7 +57,7 @@ const Footer = () => {
                             </div>
 
                         </div>
-                        <div className="col-md-6 col-lg-3 mt-3">
+                        <div className="col-md-6 col-lg-3 mt-5">
                             <h6>Information</h6>
                             <div className='footer-icon'>
                                 <Link to='/'><small>About Us</small></Link>
