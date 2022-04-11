@@ -1,18 +1,15 @@
-// import useTheme from './components/Context/useTheme';
 import './myStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from './components/Home/Home/Home';
 
 function App() {
-  // const theme = useTheme();
-  // console.log(theme)
   return (
-    <div>
-      <h1>Hello world</h1>
-      {/* <Header />
-      <Footer /> */}
-    </div >
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
