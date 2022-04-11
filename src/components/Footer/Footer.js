@@ -7,7 +7,7 @@ import FooterBottom from './Footerbottom';
 const Footer = () => {
     return (
         <div>
-            <div className='bg mh-100 bg-dark text-white'>
+            <div className='bg bg-dark text-white'>
                 <Container className='p-5'>
                     <div className='row'>
                         <div className=" col-md-6 col-lg-3 mt-5">
@@ -15,7 +15,7 @@ const Footer = () => {
                                 <div className='mb-3'>
                                     <img style={{ width: '50%' }} src={logo} alt="" />
                                 </div>
-                                <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, veniam?</small>
+                                <small style={{ color: 'lightgray' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, veniam?</small>
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-3 mt-5">

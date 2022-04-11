@@ -2,6 +2,10 @@
     background-color: #333333;
 }
 
+.card-bg {
+    background-color: #e2dbc5;
+}
+
 .btn-regular {
     height: 40px;
     background-color: #c97f0e;
@@ -45,6 +49,7 @@
 
 }
 
+/* Navbar style */
 .navLink {
     color: white;
     font-weight: 400;
@@ -76,6 +81,8 @@
     align-items: center;
 }
 
+/* Footer style */
+
 .footer-icon {
     display: flex;
     align-items: center;
@@ -91,4 +98,18 @@
 .footer-icon i {
     font-size: 20px;
     margin-right: 15px;
+}
+
+/* Subscribe section style */
+
+.form-container {
+    height: 30vh;
+    margin-bottom: 25px;
+
+}
+
+.form-container input,
+textarea {
+    width: 100%;
+    margin-top: 10px;
 }
