@@ -1,0 +1,14 @@
+form input {
+    border: 1px solid rgb(218, 215, 215);
+    outline: none;
+}
+
+form textarea {
+    border: 1px solid rgb(218, 215, 215);
+    outline: none;
+}
+
+form select {
+    border: 1px solid rgb(218, 215, 215);
+    outline: none;
+}

@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo2.svg'
+import useAuth from '../Context/AuthContext/useAuth';
+import userImage from '../../images/user.png'
 
 const NavMenu = () => {
     const [navSize, setnavSize] = useState("5rem");
     const [navColor, setnavColor] = useState("transparent");
+
+    const { user, handleSignOut } = useAuth();
+
+
     const listenScrollEvent = () => {
         window.scrollY > 10 ? setnavColor("#000000") : setnavColor("transparent");
         window.scrollY > 10 ? setnavSize("5rem") : setnavSize("6rem");
@@ -39,27 +46,51 @@ const NavMenu = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link as={Link} to="">
                             <h6 className='navLink'>Home </h6>
                         </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link as={Link} to="/dashboard">
                             <h6 className='navLink'>Dashboard</h6>
                         </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link as={Link} to="">
                             <h6 className='navLink'>Explore</h6>
                         </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link as={Link} to="">
                             <h6 className='navLink'>About Us</h6>
                         </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link as={Link} to="">
                             <h6 className='navLink'>Contact Us</h6>
                         </Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link eventKey={2} href="#memes">
-                            <button className='btn-outline'>Sign in</button>
-                        </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        {
+                            user?.email &&
+                            <Nav.Link as={Link} to="/">
+                                <h5 className='navLink'>{user?.displayName.split(" ")[0]}</h5>
+                            </Nav.Link>
+                        }
+                        {
+                            user?.photoURL === null && !user?.email ?
+
+                                <Nav.Link as={Link} to="#">
+                                    <div className="user-image"><img src={userImage} alt="" /></div>
+                                </Nav.Link>
+                                :
+                                <Nav.Link as={Link} to="#">
+                                    <div className="user-image"><img src={user?.photoURL} alt="" /></div>
+                                </Nav.Link>
+                        }
+                        {
+                            !user?.email ?
+                                <Nav.Link as={Link} to="/login">
+                                    <button className='btn-outline'>Sign in</button>
+                                </Nav.Link>
+                                :
+                                <Nav.Link as={Link} to="#">
+                                    <button onClick={handleSignOut} className='btn-outline'>Sign out</button>
+                                </Nav.Link>
+                        }
+                        <Nav.Link as={Link} to="">
                             <div className='mt-2'>
                                 <div className="linkText">0</div>
                                 <div className="icon">
@@ -67,7 +98,7 @@ const NavMenu = () => {
                                 </div>
                             </div>
                         </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link as={Link} to="">
                             <div className='mt-2'>
                                 <div className="linkText">0</div>
                                 <div className="icon">
