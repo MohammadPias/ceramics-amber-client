@@ -63,7 +63,7 @@ const NavMenu = () => {
                             <div className='mt-2'>
                                 <div className="linkText">0</div>
                                 <div className="icon">
-                                    <i class="fa-solid fa-heart navIcon"></i>
+                                    <i className="fa-solid fa-heart navIcon"></i>
                                 </div>
                             </div>
                         </Nav.Link>
@@ -71,14 +71,14 @@ const NavMenu = () => {
                             <div className='mt-2'>
                                 <div className="linkText">0</div>
                                 <div className="icon">
-                                    <i class="fa-solid fa-cart-shopping navIcon"></i>
+                                    <i className="fa-solid fa-cart-shopping navIcon"></i>
                                 </div>
                             </div>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
-        </Navbar>
+            </Container >
+        </Navbar >
     );
 };
 

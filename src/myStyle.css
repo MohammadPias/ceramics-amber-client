@@ -113,3 +113,18 @@ textarea {
     width: 100%;
     margin-top: 10px;
 }
+
+/* Slider style */
+.slide-card {
+    width: 350px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: antiquewhite; */
+}
+
+
+.review-container {
+    width: 250px;
+}
