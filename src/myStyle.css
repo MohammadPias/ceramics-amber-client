@@ -145,11 +145,12 @@ textarea {
     /* background-color: antiquewhite; */
 }
 
-
+/* Testimonial section */
 .review-container {
     width: 250px;
 }
 
+/* nav link and user dashboard */
 .user-image {
     width: 40px;
     height: 40px;
@@ -168,6 +169,7 @@ textarea {
     cursor: pointer;
 }
 
+/* Home heading */
 .heading-light {
     color: #333333;
     font-weight: bold;
@@ -198,4 +200,84 @@ textarea {
 
 .heading-dark h2 {
     font-weight: bold;
+}
+
+/* React Rating */
+
+.product-rating {
+    font-weight: 18px;
+    color: #c97f0e;
+}
+
+/* products-card style */
+.product-card {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.product-card img {
+    transition: all 1s;
+}
+
+.product-card:hover .hidden-btn {
+    opacity: 1;
+}
+
+.product-card:hover .img-cover {
+    opacity: .6;
+}
+
+.product-card:hover>img {
+    transform: scale(1.06);
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    transition: all 2s;
+}
+
+.hidden-btn {
+    /* height: 150px; */
+    /* width: 150px; */
+    border-radius: 50px;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    position: absolute;
+    top: 15%;
+    left: 75%;
+    opacity: 0;
+    transition: all .8s;
+}
+
+.cart-btn,
+.heart-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #c97f0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart-btn {
+    margin-bottom: 50px;
+}
+
+.cart-btn,
+.heart-btn i {
+    color: white;
+    font-size: 16px;
 }
