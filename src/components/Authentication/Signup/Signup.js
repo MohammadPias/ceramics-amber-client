@@ -13,7 +13,7 @@ const Signup = () => {
     const handleGoogleLogin = () => {
         handleGoogleSignIn(navigate, location)
     }
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         const name = data.name;
         const email = data.email;
@@ -21,7 +21,8 @@ const Signup = () => {
         const password = data.password;
         const password2 = data.password2;
         if (password === password2) {
-            handleSignup(email, password, name, photoURL, navigate, destination)
+            handleSignup(email, password, name, photoURL, navigate, destination);
+            reset();
         }
         else {
             alert("Password don't match")

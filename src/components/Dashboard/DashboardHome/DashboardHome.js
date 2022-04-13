@@ -3,10 +3,11 @@ import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../../Context/AuthContext/useAuth';
 import './DashboardHome.css';
 import lightLogo from '../../../images/logo-dark.svg'
+import { Badge } from 'react-bootstrap';
 
 const DashboardHome = () => {
     const [display, setDisplay] = useState({});
-    const { user, admin, handleSignOut, loding } = useAuth();
+    const { user, admin, handleSignOut } = useAuth();
 
     const displayBlock = { display: 'block' };
     const displayNone = { display: 'none' };
@@ -28,14 +29,17 @@ const DashboardHome = () => {
                 {
                     user?.email &&
                     <Link to="" className="w3-bar-item side-link">
-                        <div className="d-flex align-items-center justify-content-center user-image ms-5">
-                            <img src={user?.photoURL} alt="" />
-                            <h6 className='ms-2'>{user?.displayName.split(' ')[0]}</h6>
+                        <div className="d-flex align-items-center">
+                            <div className='user-image me-3'>
+                                <img src={user?.photoURL} alt="" />
+                            </div>
+                            <h6 className='me-2'>{user?.displayName.split(' ')[0]}</h6>
                             {
                                 user?.email && admin &&
-                                <div className="admin-style">
-                                    <small>admin</small>
-                                </div>
+
+                                <Badge pill bg="success">
+                                    admin
+                                </Badge>
                             }
                         </div>
                     </Link>

@@ -23,8 +23,9 @@ const Testimonial = () => {
     }
     return (
         <div className='vh-100 bg-dark'>
-            <div className='text-white text-center pt-3 fw-bold'>
-                <h4 >Testimonial</h4>
+            <div className='heading-dark pt-4'>
+                <h2>Testimonial</h2>
+                <h5><span>Our Clients Say</span> About Us</h5>
             </div>
             <Container>
                 <h2> Single Item</h2>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logoWhite from '../../images/logo-white.svg'
+import footerLogo from '../../images/logo2.svg'
 import FooterBottom from './Footerbottom';
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className=" col-md-6 col-lg-3 mt-5">
                             <div>
                                 <div className='mb-3'>
-                                    <img style={{ width: '50%' }} src={logoWhite} alt="" />
+                                    <img style={{ width: '50%' }} src={footerLogo} alt="" />
                                 </div>
                                 <small style={{ color: 'lightgray' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, veniam?</small>
                             </div>

@@ -8,6 +8,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
+    getUserByEmail,
     signOut,
 
 } from "firebase/auth";
@@ -28,15 +29,15 @@ const useFirebase = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 setLoading(false);
+                navigate(destination)
                 setUser(result.user);
                 const newUser = {
                     displayName: result.user.displayName,
-                    email: result.user.displayName,
+                    email: result.user.email,
                     photoURL: result.user.photoURL
                 };
-                // updateUser(newUser, 'PUT');
+                updateUser(newUser, 'PUT');
                 setError('');
-                navigate(destination)
             }).catch((error) => {
                 setError(error.message)
             });
@@ -65,8 +66,8 @@ const useFirebase = () => {
                     email: email,
                     photoURL: photoUrl
                 };
-                // updateUser(newUser, 'POST')
-                navigate('/')
+                updateUser(newUser, 'POST')
+                navigate('/login')
             })
             .catch((error) => {
                 setError(error.message);
@@ -86,7 +87,12 @@ const useFirebase = () => {
                 setError(error.message);
             })
             .finally(() => setLoading(false))
+    };
+    // delete user
+    const handleDeleteUser = (email) => {
+
     }
+
 
     // Sign out
     const handleSignOut = () => {
@@ -112,7 +118,7 @@ const useFirebase = () => {
 
     // update user to database
     const updateUser = (newUser, method) => {
-        fetch('', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newUser)
@@ -121,12 +127,10 @@ const useFirebase = () => {
 
     // check admin
     useEffect(() => {
-        fetch(`https://cryptic-wildwood-10368.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/admin/${user.email}`)
             .then(res => res.json())
-            .then(result => setAdmin(result.admin))
+            .then(result => setAdmin(result.isAdmin))
     }, [user?.email])
-
-
     return {
         user,
         error,
@@ -136,6 +140,7 @@ const useFirebase = () => {
         handleSignup,
         handleSignin,
         handleSignOut,
+        handleDeleteUser
     }
 };
 

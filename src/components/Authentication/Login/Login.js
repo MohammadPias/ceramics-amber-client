@@ -9,10 +9,10 @@ const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const destination = location.state?.from || '/';
+    const destination = location?.state?.from || '/';
 
     // Google Sign in
-    const handleGoogleLogin = (navigate, destination) => {
+    const handleGoogleLogin = () => {
         handleGoogleSignIn(navigate, destination);
     };
     const { register, handleSubmit } = useForm();
