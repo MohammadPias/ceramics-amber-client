@@ -174,7 +174,6 @@ textarea {
     color: #333333;
     font-weight: bold;
     text-align: center;
-    margin-top: 25px;
     border-bottom: 1px solid lightgrey;
 }
 
@@ -243,16 +242,18 @@ textarea {
     transition: all 2s;
 }
 
-.hidden-btn {
-    /* height: 150px; */
-    /* width: 150px; */
+.hidden-btn,
+.count-btn {
     border-radius: 50px;
     background-color: #e9e9e9;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 7px;
+}
+
+.hidden-btn {
+    flex-direction: column;
     position: absolute;
     top: 15%;
     left: 75%;
@@ -261,7 +262,9 @@ textarea {
 }
 
 .cart-btn,
-.heart-btn {
+.heart-btn,
+.count-up,
+.count-down {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -277,7 +280,37 @@ textarea {
 }
 
 .cart-btn,
-.heart-btn i {
+.heart-btn,
+.count-up,
+.count-down i {
     color: white;
     font-size: 16px;
 }
+
+/* ====================modal style==================== */
+.modal-image img {
+    width: 100%;
+}
+
+.count-btn {
+    background-color: #e9e9e9;
+    max-width: 150px;
+}
+
+.count-btn input {
+    text-align: center;
+    background-color: white;
+    border: none;
+    max-width: 60px;
+    border-radius: 3px;
+    margin: 0 5px;
+
+}
+
+.count-btn input:focus {
+    outline: 1px solid gray;
+
+}
+
+.count-up,
+.count-down {}

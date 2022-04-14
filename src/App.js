@@ -2,7 +2,9 @@ import './myStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'react-toastify/dist/ReactToastify.css';
 
+import { toast } from 'react-toastify'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import Login from './components/Authentication/Login/Login';
@@ -16,6 +18,7 @@ import Orders from './components/Dashboard/Orders/Orders';
 import Users from './components/Dashboard/Users/Users';
 import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
 
+toast.configure()
 function App() {
   return (
     <AuthProvider>
@@ -31,7 +34,7 @@ function App() {
             <Route path="orders" element={<Orders />} />
             <Route path="manageOrders" element={<ManageOrders />} />
             <Route path="allProducts" element={<AllProducts />} />
-            <Route path="updateProducts" element={<UpdateProducts />} />
+            <Route path="allProducts/:productId" element={<UpdateProducts />} />
 
           </Route>
         </Routes>
