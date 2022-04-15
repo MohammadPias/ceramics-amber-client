@@ -314,3 +314,22 @@ textarea {
 
 .count-up,
 .count-down {}
+
+.coupon-form {
+    /* display: flex;
+    justify-content: space-between; */
+    width: 100%;
+    overflow: hidden;
+}
+
+.coupon-form input {
+    height: 30px;
+    min-width: none;
+    width: 50% !important;
+}
+
+.info-btn {
+    color: #c97f0e;
+    font-size: 20px;
+    cursor: pointer;
+}

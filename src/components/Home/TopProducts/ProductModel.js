@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Card, ListGroup, Modal } from "react-bootstrap";
 import Rating from "react-rating";
+import useLocalStorage, { addToDb } from "../../Hooks/useLocalStorage";
 
-const ProductModel = ({ show, onHide, product }) => {
-
+const ProductModel = ({ show, setShow, onHide, product }) => {
     const [itemCount, setItemCount] = useState(1);
 
     const handleOnChange = (e) => {
@@ -21,9 +21,11 @@ const ProductModel = ({ show, onHide, product }) => {
         setItemCount(newCount)
     }
     const handleOnclick = () => {
-
+        const id = product?._id;
+        const value = itemCount;
+        addToDb(id, value);
+        setShow(false)
     };
-    console.log(itemCount)
     return (
         <Modal
             show={show}

@@ -16,6 +16,7 @@ const Product = ({ product }) => {
         <Col>
             <ProductModel
                 show={modalShow}
+                setShow={setModalShow}
                 onHide={() => setModalShow(false)}
                 product={targetProduct}
             />

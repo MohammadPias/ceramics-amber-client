@@ -17,6 +17,9 @@ import AllProducts from './components/Dashboard/AllProducts/AllProducts';
 import Orders from './components/Dashboard/Orders/Orders';
 import Users from './components/Dashboard/Users/Users';
 import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
+import Cart from './components/Cart/Cart';
+import CartHome from './components/CartHome/CartHome';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 toast.configure()
 function App() {
@@ -27,6 +30,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="cartHome" element={<CartHome />} />
+          <Route path="placeOrder" element={<PlaceOrder />} />
 
           <Route path='dashboard' element={<DashboardHome />}>
             <Route path="addProducts" element={<AddProducts />} />

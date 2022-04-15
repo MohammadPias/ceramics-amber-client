@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import logo from '../../images/logo2.svg'
 import useAuth from '../Context/AuthContext/useAuth';
 import userImage from '../../images/user.png'
+import { getStoredCart } from '../Hooks/useLocalStorage';
 
 const NavMenu = () => {
     const [navSize, setnavSize] = useState("5rem");
     const [navColor, setnavColor] = useState("transparent");
+    const [cartItem, setCartItem] = useState(0);
 
     const { user, handleSignOut } = useAuth();
 
@@ -22,6 +24,16 @@ const NavMenu = () => {
             window.removeEventListener("scroll", listenScrollEvent);
         };
     }, []);
+    // get data from local storage
+    useEffect(() => {
+        const cart = getStoredCart();
+        console.log(cart)
+        let item = 0;
+        for (const key in cart) {
+            item = item + cart[key];
+        }
+        setCartItem(item)
+    }, [])
     return (
         <Navbar style={{
             backgroundColor: navColor,
@@ -98,9 +110,9 @@ const NavMenu = () => {
                                 </div>
                             </div>
                         </Nav.Link>
-                        <Nav.Link as={Link} to="">
+                        <Nav.Link as={Link} to="/cartHome">
                             <div className='mt-2'>
-                                <div className="linkText">0</div>
+                                <div className="linkText">{cartItem}</div>
                                 <div className="icon">
                                     <i className="fa-solid fa-cart-shopping navIcon"></i>
                                 </div>
