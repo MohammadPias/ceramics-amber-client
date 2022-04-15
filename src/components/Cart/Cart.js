@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Card, ListGroup } from 'react-bootstrap';
+import { Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Cart = ({ cart }) => {

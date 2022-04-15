@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import footerLogo from '../../images/logo2.svg'
+import footerLogo from '../../images/logo-light.svg'
 import FooterBottom from './Footerbottom';
 
 const Footer = () => {

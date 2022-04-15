@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo2.svg'
+import logo from '../../images/logo-light.svg'
 import useAuth from '../Context/AuthContext/useAuth';
 import userImage from '../../images/user.png'
 import { getStoredCart } from '../Hooks/useLocalStorage';

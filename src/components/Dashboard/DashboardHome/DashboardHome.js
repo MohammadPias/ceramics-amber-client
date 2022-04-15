@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../../Context/AuthContext/useAuth';
 import './DashboardHome.css';
-import lightLogo from '../../../images/logo-dark.svg'
+import lightLogo from '../../../images/dashboard.png'
 import { Badge } from 'react-bootstrap';
 
 const DashboardHome = () => {
@@ -56,30 +56,43 @@ const DashboardHome = () => {
                         <h6 className="ms-4">My Orders</h6>
                     </div>
                 </Link>
-                <Link to="manageOrders" className="w3-bar-item w3-button side-link">
-                    <div className="d-flex align-items-center">
-                        <i className="fas fa-cogs"></i>
-                        <h6 className="ms-4">Manage Orders</h6>
-                    </div>
-                </Link>
-                <Link to="addProducts" className="w3-bar-item w3-button side-link">
-                    <div className="d-flex align-items-center">
-                        <i className="fa-solid fa-square-plus"></i>
-                        <h6 className="ms-4">Add Product</h6>
-                    </div>
-                </Link>
-                <Link to="allProducts" className="w3-bar-item w3-button side-link">
-                    <div className="d-flex align-items-center">
-                        <i className="fa-solid fa-border-all"></i>
-                        <h6 className="ms-4">All Products</h6>
-                    </div>
-                </Link>
-                <Link to="users" className="w3-bar-item w3-button side-link">
-                    <div className="d-flex align-items-center">
-                        <i className="fa-solid fa-user-plus"></i>
-                        <h6 className="ms-4">Users</h6>
-                    </div>
-                </Link>
+                {
+                    user?.email && admin &&
+                    <Link to="manageOrders" className="w3-bar-item w3-button side-link">
+                        <div className="d-flex align-items-center">
+                            <i className="fas fa-cogs"></i>
+                            <h6 className="ms-4">Manage Orders</h6>
+                        </div>
+                    </Link>
+                }
+                {
+                    user?.email && admin &&
+                    <Link to="addProducts" className="w3-bar-item w3-button side-link">
+                        <div className="d-flex align-items-center">
+                            <i className="fa-solid fa-square-plus"></i>
+                            <h6 className="ms-4">Add Product</h6>
+                        </div>
+                    </Link>
+                }
+                {
+                    user?.email && admin &&
+                    <Link to="allProducts" className="w3-bar-item w3-button side-link">
+                        <div className="d-flex align-items-center">
+                            <i className="fa-solid fa-border-all"></i>
+                            <h6 className="ms-4">All Products</h6>
+                        </div>
+                    </Link>
+                }
+                {
+                    user?.email && admin &&
+                    <Link to="users" className="w3-bar-item w3-button side-link">
+                        <div className="d-flex align-items-center">
+                            <i className="fa-solid fa-user-plus"></i>
+                            <h6 className="ms-4">Users</h6>
+                        </div>
+                    </Link>
+                }
+
                 <Link to="#" className="w3-bar-item w3-button side-link">
                     <div className="d-flex align-items-center">
                         <i className="fas fa-sign-out-alt"></i>

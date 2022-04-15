@@ -17,7 +17,6 @@ import AllProducts from './components/Dashboard/AllProducts/AllProducts';
 import Orders from './components/Dashboard/Orders/Orders';
 import Users from './components/Dashboard/Users/Users';
 import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
-import Cart from './components/Cart/Cart';
 import CartHome from './components/CartHome/CartHome';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
