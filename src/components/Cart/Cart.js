@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
+import { Button, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Cart = ({ cart }) => {
@@ -48,15 +48,15 @@ const Cart = ({ cart }) => {
                             <h5>${tax}</h5>
                         </div>
                     </ListGroup.Item>
-                    {/* <ListGroup.Item>
+                    <ListGroup.Item>
                         <div className="">
                             <h6>Coupon: </h6>
-                            <form onSubmit={handleOnSubmit} className="coupon-form">
+                            <form onSubmit={handleOnSubmit} className="coupon-form d-flex justify-content-between">
                                 <input onChange={handleOnchange} type="text" />
                                 <Button type='submit' className='mt-2' variant="secondary" size="sm">Check</Button>
                             </form>
                         </div>
-                    </ListGroup.Item> */}
+                    </ListGroup.Item>
                     <ListGroup.Item>
                         <div className="d-flex justify-content-between align-items-center">
                             <h5>Total: </h5>
@@ -64,8 +64,9 @@ const Cart = ({ cart }) => {
                         </div>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <div className="d-flex flex-row-reverse align-items-center">
-                            <Link to={`/placeOrder/`}><button className="btn-regular">Order</button></Link>
+                        <div className="d-flex justify-content-between align-items-center">
+                            <Link to='/' className='text-decoration-none'><button className="btn-outline-sm">Shop</button></Link>
+                            <Link to='/placeOrder' className='text-decoration-none'><button className="btn-regular">Order</button></Link>
                         </div>
                     </ListGroup.Item>
                 </ListGroup>

@@ -6,6 +6,16 @@
     background-color: #e2dbc5;
 }
 
+.bg-green {
+    background-color: rgb(179, 224, 179);
+    color: #333333;
+}
+
+.bg-red {
+    background-color: rgb(210, 170, 170);
+    color: #333333;
+}
+
 .btn-regular {
     height: 36px;
     background-color: #c97f0e;
@@ -47,10 +57,11 @@
     color: white;
 }
 
-.btn-outline {
+.btn-outline,
+.btn-outline-sm {
     height: 36px;
     background-color: transparent;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 8px 20px;
     border-radius: 18px;
     font-weight: 500;
@@ -62,6 +73,15 @@
 
     display: flex;
     align-items: center;
+}
+
+.btn-outline-sm {
+    color: #333333;
+}
+
+.btn-outline-sm:hover {
+    background-color: #c97f0e;
+    color: white;
 }
 
 .btn-outline:hover {
@@ -331,5 +351,39 @@ textarea {
 .info-btn {
     color: #c97f0e;
     font-size: 20px;
+    cursor: pointer;
+}
+
+/* shipping  form*/
+.header {
+    position: relative;
+}
+
+.progress-container {
+    background-color: #989696;
+    height: 15px;
+    border-radius: 7px;
+}
+
+.progress-bar {
+    height: 15px;
+    border-radius: 7px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sm-image {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.sm-image img {
+    width: 100%;
+}
+
+.badge-btn {
     cursor: pointer;
 }
