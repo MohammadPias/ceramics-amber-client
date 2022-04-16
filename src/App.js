@@ -19,6 +19,10 @@ import Users from './components/Dashboard/Users/Users';
 import ManageOrders from './components/Dashboard/ManageOrders/ManageOrders';
 import CartHome from './components/CartHome/CartHome';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Index from './components/Dashboard/DashboardHome/Index';
+import Shop from './components/Dashboard/Shop/Shop';
+import PrivateRoute from './components/Authentication/PrivateRoute/PrivateRoute';
+import AdminRoute from './components/Authentication/AdminRoute/AdminRoute';
 
 toast.configure()
 function App() {
@@ -30,14 +34,16 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="cartHome" element={<CartHome />} />
-          <Route path="placeOrder" element={<PlaceOrder />} />
+          <Route path="placeOrder" element={<PrivateRoute><PlaceOrder /></PrivateRoute>} />
 
           <Route path='dashboard' element={<DashboardHome />}>
-            <Route path="addProducts" element={<AddProducts />} />
-            <Route path="users" element={<Users />} />
+            <Route index element={<Index />} />
+            <Route path="shop" element={<Shop />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="manageOrders" element={<ManageOrders />} />
-            <Route path="allProducts" element={<AllProducts />} />
+            <Route path="addProducts" element={<AdminRoute><AddProducts /></AdminRoute>} />
+            <Route path="users" element={<AdminRoute><Users /></AdminRoute>} />
+            <Route path="manageOrders" element={<AdminRoute><ManageOrders /></AdminRoute>} />
+            <Route path="allProducts" element={<AdminRoute><AllProducts /></AdminRoute>} />
             <Route path="allProducts/:productId" element={<UpdateProducts />} />
 
           </Route>

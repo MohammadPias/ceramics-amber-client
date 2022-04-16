@@ -16,6 +16,16 @@
     color: #333333;
 }
 
+.bg-gold {
+    background-color: rgb(214, 181, 109);
+    color: #333333;
+}
+
+.bg-blue {
+    background-color: rgb(109, 191, 214);
+    color: #333333;
+}
+
 .btn-regular {
     height: 36px;
     background-color: #c97f0e;
@@ -386,4 +396,18 @@ textarea {
 
 .badge-btn {
     cursor: pointer;
+}
+
+.div-container {
+    height: 120px;
+}
+
+.link-style {
+    text-decoration: none;
+}
+
+.spinner-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
 }

@@ -56,6 +56,21 @@ const DashboardHome = () => {
                         <h6 className="ms-4">My Orders</h6>
                     </div>
                 </Link>
+                <Link to="shop" className="w3-bar-item w3-button side-link">
+                    <div className="d-flex align-items-center">
+                        <i className="fa-solid fa-store"></i>
+                        <h6 className="ms-4">Shop</h6>
+                    </div>
+                </Link>
+                {
+                    user?.email && admin &&
+                    <Link to="users" className="w3-bar-item w3-button side-link">
+                        <div className="d-flex align-items-center">
+                            <i className="fa-solid fa-user-plus"></i>
+                            <h6 className="ms-4">Users</h6>
+                        </div>
+                    </Link>
+                }
                 {
                     user?.email && admin &&
                     <Link to="manageOrders" className="w3-bar-item w3-button side-link">
@@ -79,20 +94,10 @@ const DashboardHome = () => {
                     <Link to="allProducts" className="w3-bar-item w3-button side-link">
                         <div className="d-flex align-items-center">
                             <i className="fa-solid fa-border-all"></i>
-                            <h6 className="ms-4">All Products</h6>
+                            <h6 className="ms-4">Manage Products</h6>
                         </div>
                     </Link>
                 }
-                {
-                    user?.email && admin &&
-                    <Link to="users" className="w3-bar-item w3-button side-link">
-                        <div className="d-flex align-items-center">
-                            <i className="fa-solid fa-user-plus"></i>
-                            <h6 className="ms-4">Users</h6>
-                        </div>
-                    </Link>
-                }
-
                 <Link to="#" className="w3-bar-item w3-button side-link">
                     <div className="d-flex align-items-center">
                         <i className="fas fa-sign-out-alt"></i>
