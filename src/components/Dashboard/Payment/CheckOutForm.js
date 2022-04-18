@@ -16,7 +16,7 @@ const CheckOutForm = ({ order }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://agile-escarpment-29078.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price }),
@@ -80,7 +80,7 @@ const CheckOutForm = ({ order }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `http://localhost:5000/myOrders/${order?._id}`
+            const url = `https://agile-escarpment-29078.herokuapp.com/myOrders/${order?._id}`
             fetch(url, {
                 method: "PUT",
                 headers: {
