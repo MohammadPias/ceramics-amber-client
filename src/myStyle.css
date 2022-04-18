@@ -251,6 +251,7 @@ textarea {
 
 .product-card:hover .hidden-btn {
     opacity: 1;
+    left: 75%;
 }
 
 .product-card:hover .img-cover {
@@ -286,7 +287,7 @@ textarea {
     flex-direction: column;
     position: absolute;
     top: 15%;
-    left: 75%;
+    left: 0;
     opacity: 0;
     transition: all .8s;
 }
@@ -410,4 +411,5 @@ textarea {
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }

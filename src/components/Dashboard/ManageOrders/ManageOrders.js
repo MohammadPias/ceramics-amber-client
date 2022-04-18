@@ -21,7 +21,7 @@ const ManageOrders = () => {
         console.log(id)
         const proceed = window.confirm('Are you sure you wan to delete the order?')
         if (proceed) {
-            fetch(`http://localhost:5000/myOrders/${id}`, {
+            fetch(`https://agile-escarpment-29078.herokuapp.com/myOrders/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -41,7 +41,7 @@ const ManageOrders = () => {
     };
     const handleUdateStatus = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/myOrders/${id}`, { method: "PUT" })
+        fetch(`https://agile-escarpment-29078.herokuapp.com/myOrders/${id}`, { method: "PUT" })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
@@ -51,7 +51,7 @@ const ManageOrders = () => {
             })
     }
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://agile-escarpment-29078.herokuapp.com/myorders')
             .then(res => res.json())
             .then(data => {
                 setOrderData(data)

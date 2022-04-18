@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Rating from "react-rating";
 import ProductModel from './ProductModel';
 
@@ -38,9 +38,20 @@ const Product = ({ product }) => {
                             <h5>Price: ${price}</h5>
                         </div>
                         <div className='hidden-btn'>
-                            <div onClick={handleClick} className='cart-btn'>
-                                <i className="fa-solid fa-cart-shopping"></i>
-                            </div>
+                            <OverlayTrigger
+                                key='top'
+                                placement='top'
+                                overlay={
+                                    <Tooltip id={`tooltip-top`}>
+                                        Add to <strong>Cart</strong>.
+                                    </Tooltip>
+                                }
+                            >
+                                <div onClick={handleClick} className='cart-btn'>
+                                    <i className="fa-solid fa-cart-shopping"></i>
+                                </div>
+                            </OverlayTrigger>
+
                             <div className='heart-btn'>
                                 <i className="fa-solid fa-heart"></i>
                             </div>

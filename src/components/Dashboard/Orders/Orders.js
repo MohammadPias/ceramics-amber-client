@@ -21,7 +21,7 @@ const Orders = () => {
         console.log(id)
         const proceed = window.confirm('Are you sure you wan to delete the order?')
         if (proceed) {
-            fetch(`http://localhost:5000/myOrders/${id}`, {
+            fetch(`https://agile-escarpment-29078.herokuapp.com/myOrders/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -40,7 +40,7 @@ const Orders = () => {
         setOrder(currOrder)
     }
     useEffect(() => {
-        fetch('http://localhost:5000/myOrders', {
+        fetch('https://agile-escarpment-29078.herokuapp.com/myOrders', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email })
@@ -58,11 +58,12 @@ const Orders = () => {
                 </h5>
             </div>
             <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-7">
                     <Table responsive striped bordered hover>
                         <thead>
                             <tr>
                                 <th>Order ID</th>
+                                <th>Date</th>
                                 <th>Status</th>
                                 <th>Delete</th>
                                 <th>Details</th>
@@ -73,6 +74,7 @@ const Orders = () => {
                                 orderData?.map(data =>
                                     <tr key={data?._id}>
                                         <td>#{data?._id}</td>
+                                        <td>{data?.date}</td>
                                         <td>
                                             {
                                                 !data?.status ?
@@ -93,7 +95,7 @@ const Orders = () => {
                         </tbody>
                     </Table>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-5">
                     <OrdersCard
                         orderCart={order?.cart || []}
                         order={order || {}}

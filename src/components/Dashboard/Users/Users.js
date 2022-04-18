@@ -9,7 +9,7 @@ const Users = () => {
     const [adminRole, setAdminRole] = useState([]);
     const [reload, setReload] = useState(false);
 
-    const { handleDeleteUser } = useAuth();
+
     const handleOnBlur = (e) => {
         setEmail(e.target.value);
     };
@@ -18,7 +18,7 @@ const Users = () => {
         const isProceed = window.confirm('Are you sure you want to delete the user?')
         if (isProceed) {
             // handleDeleteUser(email);
-            fetch(`http://localhost:5000/users/${id}`, { method: 'DELETE' })
+            fetch(`https://agile-escarpment-29078.herokuapp.com/users/${id}`, { method: 'DELETE' })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
@@ -33,7 +33,7 @@ const Users = () => {
     const handleAdminRole = () => {
         // e.preventDefault();
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://agile-escarpment-29078.herokuapp.com/users/admin', {
             method: "PUT",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)
@@ -54,7 +54,7 @@ const Users = () => {
 
     // fetch all users
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://agile-escarpment-29078.herokuapp.com/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data)
@@ -62,7 +62,7 @@ const Users = () => {
     }, [reload]);
     //fetch admins
     useEffect(() => {
-        fetch('http://localhost:5000/users/admin')
+        fetch('https://agile-escarpment-29078.herokuapp.com/users/admin')
             .then(res => res.json())
             .then(data => {
                 setAdminRole(data)

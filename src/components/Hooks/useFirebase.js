@@ -118,7 +118,7 @@ const useFirebase = () => {
 
     // update user to database
     const updateUser = (newUser, method) => {
-        fetch('http://localhost:5000/users', {
+        fetch('https://agile-escarpment-29078.herokuapp.com/users', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(newUser)
@@ -127,7 +127,7 @@ const useFirebase = () => {
 
     // check admin
     useEffect(() => {
-        fetch(`http://localhost:5000/users/admin/${user.email}`)
+        fetch(`https://agile-escarpment-29078.herokuapp.com/users/admin/${user.email}`)
             .then(res => res.json())
             .then(result => setAdmin(result.isAdmin))
     }, [user?.email])

@@ -26,16 +26,28 @@ const PlaceOrder = () => {
 
     const navigate = useNavigate()
     const { cart } = useCart();
-    console.log(cart)
+
+    let subTotal = 0;
+    for (const product of cart) {
+        subTotal = subTotal + parseInt(product?.price) * parseInt(product?.quantity);
+    };
+    const shipping = subTotal > 300 ? 25 : 15;
+    const tax = (subTotal + shipping) * 10 / 100;
+    let total = subTotal + tax + shipping;
+    const date = new Date();
 
     const handlePlaceOrder = (data) => {
         const orders = {
             ...data,
+            date: date.toLocaleDateString(),
+            shipping,
+            tax,
+            total,
             cart
         }
 
         if (cart.length !== 0) {
-            fetch('http://localhost:5000/orders', {
+            fetch('https://agile-escarpment-29078.herokuapp.com/orders', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(orders)

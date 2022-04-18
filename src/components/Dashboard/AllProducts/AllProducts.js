@@ -9,7 +9,7 @@ const AllProducts = () => {
     const handleOnclick = (id) => {
         const proceed = window.confirm("Are you sure you want to delete?");
         if (proceed) {
-            fetch('http://localhost:5000/products', {
+            fetch('https://agile-escarpment-29078.herokuapp.com/products', {
                 method: "DELETE",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ id })
@@ -46,7 +46,7 @@ const AllProducts = () => {
                                     <td>{product?.title}</td>
                                     <td>${product?.price}</td>
                                     <td>
-                                        <Link to={`/dashboard/allProducts/${product?._id}`}>
+                                        <Link to={`${product?._id}`}>
                                             <i className="fa-solid fa-pen-to-square i-link"></i>
                                         </Link>
                                     </td>
