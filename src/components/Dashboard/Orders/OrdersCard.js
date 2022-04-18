@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Context/AuthContext/useAuth';
 
 const OrdersCard = ({ orderCart, order }) => {
+
+    const { user } = useAuth();
     return (
         <Card style={{ minWidth: '18rem', backgroundColor: '#f2f2f2', minHeight: '20rem' }}>
             <Card.Header as='h4' className='text-center'>Order Details</Card.Header>
@@ -25,16 +28,17 @@ const OrdersCard = ({ orderCart, order }) => {
                                 </h5>
                                 <small>Payment Method: {order?.payment}</small>
                                 <br />{
-                                    order?.paymentStatus ?
-                                        <small className='bg-green px-5 py-2 d-inline-block mt-2 rounded-pill my-2'>Paid</small>
-                                        :
-                                        <div className='d-flex justify-content-between align-items-center my-2'>
-                                            <small className='bg-red px-5 py-2 d-inline-block mt-2 rounded-pill'>Not Paid</small>
-                                            <Link to={`payment/${order?._id}`}>
-                                                <button className="btn-regular my-2">Make Payment </button>
-                                            </Link>
-                                        </div>
+                                    order?.paymentStatus &&
+                                    <small className='bg-green px-5 py-2 d-inline-block mt-2 rounded-pill my-2'>Paid</small>
                                 }
+                                <div className='d-flex justify-content-between align-items-center my-2'>
+                                    {!order?.paymentStatus &&
+                                        <small className='bg-red px-5 py-2 d-inline-block mt-2 rounded-pill'>Not Paid</small>
+                                    }
+                                    {!order?.paymentStatus && order?.email === user?.email && <Link to={`payment/${order?._id}`}>
+                                        <button className="btn-regular my-2">Make Payment </button>
+                                    </Link>}
+                                </div>
                             </div>
                             <div className="heading-light text-start mt-2">
                                 <h5 className="fw-bold">

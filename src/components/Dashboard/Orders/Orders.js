@@ -49,7 +49,8 @@ const Orders = () => {
             .then(data => {
                 setOrderData(data)
             })
-    }, [email, refresh])
+    }, [email, refresh]);
+    console.log(order)
     return (
         <Container>
             <div className="heading-light">

@@ -24,6 +24,7 @@ const CheckOutForm = ({ order }) => {
             .then((res) => res.json())
             .then((data) => {
                 setClientSecret(data.clientSecret)
+                console.log(data)
 
             });
     }, [price]);
@@ -75,10 +76,10 @@ const CheckOutForm = ({ order }) => {
             setProcessing(false);
             // save to database
             const payment = {
-                amount: paymentIntent.amount,
-                created: paymentIntent.created,
-                last4: paymentMethod.card.last4,
-                transaction: paymentIntent.client_secret.slice('_secret')[0]
+                amount: paymentIntent?.amount,
+                created: paymentIntent?.created,
+                last4: paymentMethod?.card.last4,
+                transaction: paymentIntent?.client_secret.slice('_secret')[0]
             }
             const url = `https://agile-escarpment-29078.herokuapp.com/myOrders/${order?._id}`
             fetch(url, {
@@ -94,7 +95,6 @@ const CheckOutForm = ({ order }) => {
                 })
         }
     };
-    console.log(processing)
     return (
         <div className='mx-auto border border-light rounded shadow-sm p-3 mt-3' style={{ maxWidth: '500px' }}>
             <Container>

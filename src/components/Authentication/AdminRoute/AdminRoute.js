@@ -10,7 +10,9 @@ const AdminRoute = ({ children }) => {
     if (loading) {
         return <Spinner animation="grow" />
     }
-    return user?.email && admin ? children : <Navigate to='/login' state={{ from: location }} />;
+    if (admin) {
+        return user?.email && admin ? children : <Navigate to='/login' state={{ from: location }} />;
+    }
 };
 
 export default AdminRoute;
