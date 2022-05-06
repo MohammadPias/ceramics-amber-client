@@ -17,6 +17,7 @@ const ManageOrders = () => {
         orders = [...orders, ...newOrders]
     };
 
+    // delete order
     const handleDelete = (id) => {
         console.log(id)
         const proceed = window.confirm('Are you sure you wan to delete the order?')
@@ -39,6 +40,8 @@ const ManageOrders = () => {
         const currOrder = orderData?.find(order => order?._id === id);
         setOrder(currOrder)
     };
+
+    // Update order status
     const handleUdateStatus = (id) => {
         console.log(id)
         fetch(`https://agile-escarpment-29078.herokuapp.com/myOrders/${id}`, { method: "PUT" })
