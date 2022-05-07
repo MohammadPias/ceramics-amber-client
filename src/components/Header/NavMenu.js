@@ -64,7 +64,7 @@ const NavMenu = () => {
                         <Nav.Link as={Link} to="/dashboard">
                             <h6 className='navLink'>Dashboard</h6>
                         </Nav.Link>
-                        <Nav.Link as={Link} to="">
+                        <Nav.Link as={Link} to="/dashboard/shop">
                             <h6 className='navLink'>Explore</h6>
                         </Nav.Link>
                         <Nav.Link as={Link} to="">
