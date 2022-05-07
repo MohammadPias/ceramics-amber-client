@@ -13,7 +13,7 @@ const TopProducts = () => {
                 </div>
                 <Row xs={1} md={3} lg={4} className="g-4 mt-4">
                     {
-                        products?.slice(0, 8).map(product => <Product
+                        products?.result?.slice(0, 8).map(product => <Product
                             key={product._id}
                             product={product}
                         />)

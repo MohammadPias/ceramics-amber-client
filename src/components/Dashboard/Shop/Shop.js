@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Form, Row, Spinner } from 'react-bootstrap';
 import Product from '../../Home/TopProducts/Product';
-import useProducts from '../../Hooks/useProducts';
 
 const Shop = () => {
     const [selectValue, setSelectValue] = useState();
-    const { products } = useProducts([]);
+    const [products, setProducts] = useState([]);
+    const [pageCount, setPageCount]= useState(0);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+                const count = data.count;
+                const pageNum = Math.ceil(count/6);
+                setPageCount(pageNum)
+            })
+    }, [])
+
+    const allProducts = products?.result;
 
     let filterProducts = [];
     if (selectValue >= 0) {
-        filterProducts = products?.filter(product => product?.category === selectValue);
+        filterProducts = allProducts?.filter(product => product?.category === selectValue);
     }
     else {
-        filterProducts = products
+        filterProducts = allProducts
     };
 
 

@@ -11,26 +11,96 @@ const Testimonial = () => {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 2000,
-        pauseOnHover: true
+        pauseOnHover: true,
+        responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
     };
     const slideBg = {
         background: `url(${slideImage})`,
         width: '350px',
         height: '400px',
-        // backgroundSize: 'cover',
+        backgroundSize: 'cover',
     }
     return (
-        <div className='vh-100 bg-dark'>
-            <div className='heading-dark pt-4'>
+        <div className='w-100 min-vh-100 bg-dark p-4 mt-4'>
+            <div className='heading-dark mt-2'>
                 <h2>Testimonial</h2>
                 <h5><span>Our Clients Say</span> About Us</h5>
             </div>
-            <Container>
+            <Container className='mb-4'>
                 <h2> Single Item</h2>
                 <Slider {...settings}>
-                    <div  >
+                    <div>
+                        <div className='slide-card mx-auto' style={slideBg}>
+                            <div className='review-container'>
+                                <div className='d-flex flex-column justify-content-center align-items-center'>
+                                    <img style={{ width: '30%' }} src={img} alt="" />
+                                    <h6 className='mt-3'>John Caryl</h6>
+                                </div>
+                                <p>The product images load quickly and are displayed in small frames 3 high with a side to side scroll bar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide-card mx-auto' style={slideBg}>
+                            <div className='review-container'>
+                                <div className='d-flex flex-column justify-content-center align-items-center'>
+                                    <img style={{ width: '30%' }} src={img} alt="" />
+                                    <h6 className='mt-3'>John Caryl</h6>
+                                </div>
+                                <p>The product images load quickly and are displayed in small frames 3 high with a side to side scroll bar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide-card mx-auto' style={slideBg}>
+                            <div className='review-container'>
+                                <div className='d-flex flex-column justify-content-center align-items-center'>
+                                    <img style={{ width: '30%' }} src={img} alt="" />
+                                    <h6 className='mt-3'>John Caryl</h6>
+                                </div>
+                                <p>The product images load quickly and are displayed in small frames 3 high with a side to side scroll bar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide-card mx-auto' style={slideBg}>
+                            <div className='review-container'>
+                                <div className='d-flex flex-column justify-content-center align-items-center'>
+                                    <img style={{ width: '30%' }} src={img} alt="" />
+                                    <h6 className='mt-3'>John Caryl</h6>
+                                </div>
+                                <p>The product images load quickly and are displayed in small frames 3 high with a side to side scroll bar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div  >
                         <div className='slide-card' style={slideBg}>
                             <div className='review-container'>
                                 <div className='d-flex flex-column justify-content-center align-items-center'>
@@ -84,18 +154,7 @@ const Testimonial = () => {
                                 <p>The product images load quickly and are displayed in small frames 3 high with a side to side scroll bar.</p>
                             </div>
                         </div>
-                    </div>
-                    <div  >
-                        <div className='slide-card' style={slideBg}>
-                            <div className='review-container'>
-                                <div className='d-flex flex-column justify-content-center align-items-center'>
-                                    <img style={{ width: '30%' }} src={img} alt="" />
-                                    <h6>John Caryl</h6>
-                                </div>
-                                <p>The product images load quickly and are displayed in small frames 3 high with a side to side scroll bar.</p>
-                            </div>
-                        </div>
-                    </div>
+                    </div> */}
                 </Slider>
             </Container>
         </div>

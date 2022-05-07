@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
@@ -6,6 +6,8 @@ import useProducts from '../../Hooks/useProducts';
 
 const AllProducts = () => {
     const { products } = useProducts([]);
+    const allProducts = products?.result;
+    console.log(allProducts)
     const handleOnclick = (id) => {
         const proceed = window.confirm("Are you sure you want to delete?");
         if (proceed) {
@@ -25,14 +27,14 @@ const AllProducts = () => {
     return (
         <div>
             <div className="heading-light">
-                <h5 className='fw-bold'>all <span>Products</span></h5 >
+                <h5 className='fw-bold'>Manage <span>Products</span></h5 >
             </div>
             <Container>
                 <Table striped bordered hover responsive>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
+                            <th>Products ({products?.count})</th>
+                            <th>Product ID</th>
                             <th>Price</th>
                             <th>Update</th>
                             <th>Delete</th>
@@ -40,10 +42,17 @@ const AllProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            products?.map(product =>
+                            allProducts?.map(product =>
                                 <tr key={product._id}>
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <div className="sm-image me-3">
+                                                <img src={product?.img} alt="" />
+                                            </div>
+                                            <small>{product?.title}</small>
+                                        </div>
+                                    </td>
                                     <td>{product._id}</td>
-                                    <td>{product?.title}</td>
                                     <td>${product?.price}</td>
                                     <td>
                                         <Link to={`${product?._id}`}>

@@ -167,17 +167,14 @@ textarea {
 
 /* Slider style */
 .slide-card {
-    width: 350px;
-    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: antiquewhite; */
 }
 
 /* Testimonial section */
 .review-container {
-    width: 250px;
+    width: 70%;
 }
 
 /* nav link and user dashboard */
@@ -342,9 +339,6 @@ textarea {
     outline: 1px solid gray;
 
 }
-
-.count-up,
-.count-down {}
 
 .coupon-form {
     /* display: flex;
