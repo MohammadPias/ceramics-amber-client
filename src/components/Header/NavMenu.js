@@ -5,6 +5,7 @@ import logo from '../../images/logo-light.svg'
 import useAuth from '../Context/AuthContext/useAuth';
 import userImage from '../../images/user.png'
 import { getStoredCart } from '../Hooks/useLocalStorage';
+import { HashLink } from 'react-router-hash-link';
 
 const NavMenu = () => {
     const [navSize, setnavSize] = useState("5rem");
@@ -67,10 +68,10 @@ const NavMenu = () => {
                         <Nav.Link as={Link} to="/dashboard/shop">
                             <h6 className='navLink'>Explore</h6>
                         </Nav.Link>
-                        <Nav.Link as={Link} to="">
+                        <Nav.Link as={HashLink} to="/#about">
                             <h6 className='navLink'>About Us</h6>
                         </Nav.Link>
-                        <Nav.Link as={Link} to="">
+                        <Nav.Link as={Link} to="contact">
                             <h6 className='navLink'>Contact Us</h6>
                         </Nav.Link>
                     </Nav>

@@ -24,6 +24,7 @@ import Shop from './components/Dashboard/Shop/Shop';
 import PrivateRoute from './components/Authentication/PrivateRoute/PrivateRoute';
 import AdminRoute from './components/Authentication/AdminRoute/AdminRoute';
 import MakePayment from './components/Dashboard/Payment/MakePayment';
+import ContactUs from './components/Contact/ContactUs';
 
 toast.configure()
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="cartHome" element={<CartHome />} />
           <Route path="placeOrder" element={<PrivateRoute><PlaceOrder /></PrivateRoute>} />
+          <Route path="contact" element={<ContactUs />} />
 
           <Route path='dashboard' element={<DashboardHome />}>
             <Route index element={<Index />} />
