@@ -1,12 +1,12 @@
 import React from 'react';
 import './ImageGrid.css';
 import { Container } from 'react-bootstrap';
-import grid1 from '../../../images/g1.png'
-import grid2 from '../../../images/g2.png'
-import grid3 from '../../../images/g3.png'
-import grid4 from '../../../images/g4.png'
-import grid5 from '../../../images/g5.png'
-import grid6 from '../../../images/g6.png'
+import grid1 from '../../../images/g1.jpg'
+import grid2 from '../../../images/g2.jpg'
+import grid3 from '../../../images/g3.jpg'
+import grid4 from '../../../images/g4.jpg'
+import grid5 from '../../../images/g5.jpg'
+import grid6 from '../../../images/g6.jpg'
 
 const ImageGrid = () => {
     return (

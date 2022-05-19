@@ -1,8 +1,8 @@
 import React from 'react';
-import ban1 from '../../images/ban1.png'
-import ban2 from '../../images/ban2.png'
-import ban3 from '../../images/ban3.png'
-import ban4 from '../../images/ban4.png'
+import ban1 from '../../images/ban1.jpg'
+import ban2 from '../../images/ban2.jpg'
+import ban3 from '../../images/ban3.jpg'
+import ban4 from '../../images/ban4.jpg'
 import { Carousel } from 'react-bootstrap';
 
 

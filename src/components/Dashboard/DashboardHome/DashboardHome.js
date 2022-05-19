@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../../Context/AuthContext/useAuth';
 import './DashboardHome.css';
-import lightLogo from '../../../images/dashboard.png'
+import lightLogo from '../../../images/logo.svg'
 import { Badge } from 'react-bootstrap';
 
 const DashboardHome = () => {

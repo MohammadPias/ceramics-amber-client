@@ -49,7 +49,7 @@ const Signup = () => {
                 <h6>------or------</h6>
 
                 <button onClick={handleGoogleLogin} variant='light' className='w-100 rounded-pill border'>
-                    <img className='me-3' src="https://img.icons8.com/color/25/000000/google-logo.png" alt='' />
+                    <img className='me-3' src="https://img.icons8.com/color/25/000000/google-logo.jpg" alt='' />
                     Signin with google
                 </button>
             </div>
