@@ -15,10 +15,10 @@ const useCart = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.length) {
-                    const cartProducts = result;
+                    // const cartProducts = result;
                     const newCart = [];
                     for (const props in saveCart) {
-                        const addedProducts = cartProducts?.find(product => product?._id === props);
+                        const addedProducts = result?.find(product => product?._id === props);
                         if (addedProducts) {
                             const quantity = saveCart[props];
                             addedProducts.quantity = quantity;
@@ -33,7 +33,7 @@ const useCart = () => {
 
     return {
         cart,
-        setCart
+        setCart,
     }
 };
 

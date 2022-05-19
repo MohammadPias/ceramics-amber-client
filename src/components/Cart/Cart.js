@@ -65,7 +65,7 @@ const Cart = ({ cart }) => {
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <div className="d-flex justify-content-between align-items-center">
-                            <Link to='/' className='text-decoration-none'><button className="btn-outline-sm">Shop</button></Link>
+                            <Link to='/dashboard/shop' className='text-decoration-none'><button className="btn-outline-sm">Shop</button></Link>
                             <Link to='/placeOrder' className='text-decoration-none'><button className="btn-regular">Order</button></Link>
                         </div>
                     </ListGroup.Item>

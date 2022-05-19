@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, ListGroup, Modal } from "react-bootstrap";
 import Rating from "react-rating";
-import useLocalStorage, { addToDb } from "../../Hooks/useLocalStorage";
+import { addToDb, decrement, increment } from "../../Hooks/useLocalStorage";
 
 const ProductModel = ({ show, setShow, onHide, product }) => {
     const [itemCount, setItemCount] = useState(1);
@@ -9,16 +9,18 @@ const ProductModel = ({ show, setShow, onHide, product }) => {
     const handleOnChange = (e) => {
         setItemCount(e.target.value)
     };
-    const handleIncrease = () => {
+    const handleIncrease = (id) => {
         const newCount = parseInt(itemCount) + 1;
         setItemCount(newCount)
+        increment(id)
     }
-    const handleDecrease = () => {
+    const handleDecrease = (id) => {
         let newCount = parseInt(itemCount);
         if (itemCount > 1) {
             newCount -= 1;
         }
         setItemCount(newCount)
+        decrement(id)
     }
     const handleOnclick = () => {
         const id = product?._id;
@@ -79,11 +81,11 @@ const ProductModel = ({ show, setShow, onHide, product }) => {
                                 <ListGroup.Item>
                                     <div className="d-flex justify-content-between">
                                         <div className='count-btn'>
-                                            <div onClick={handleDecrease} className='count-down'>
+                                            <div onClick={() => handleDecrease(product?._id)} className='count-down'>
                                                 <i className="fa-solid fa-circle-minus"></i>
                                             </div>
                                             <input onChange={handleOnChange} type="number" min={1} value={itemCount} id="" />
-                                            <div onClick={handleIncrease} className='count-up'>
+                                            <div onClick={() => handleIncrease(product?._id)} className='count-up'>
                                                 <i className="fa-solid fa-circle-plus"></i>
                                             </div>
                                         </div>

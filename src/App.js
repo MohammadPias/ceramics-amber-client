@@ -27,6 +27,7 @@ import MakePayment from './components/Dashboard/Payment/MakePayment';
 import ContactUs from './components/Contact/ContactUs';
 
 toast.configure()
+
 function App() {
   return (
     <AuthProvider>

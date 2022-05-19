@@ -51,12 +51,10 @@ const Product = ({ product }) => {
                                     <i className="fa-solid fa-cart-shopping"></i>
                                 </div>
                             </OverlayTrigger>
-
                             <div className='heart-btn'>
                                 <i className="fa-solid fa-heart"></i>
                             </div>
                         </div>
-
                     </Card.Text>
                 </Card.Body>
             </Card>

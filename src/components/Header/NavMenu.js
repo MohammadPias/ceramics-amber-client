@@ -11,6 +11,7 @@ const NavMenu = () => {
     const [navSize, setnavSize] = useState("5rem");
     const [navColor, setnavColor] = useState("transparent");
     const [cartItem, setCartItem] = useState(0);
+    const [toggle, setToggle] = useState(false);
 
     const { user, handleSignOut } = useAuth();
 
@@ -28,7 +29,6 @@ const NavMenu = () => {
     // get data from local storage
     useEffect(() => {
         const cart = getStoredCart();
-        console.log(cart)
         let item = 0;
         for (const key in cart) {
             item = item + cart[key];
@@ -56,8 +56,8 @@ const NavMenu = () => {
                         alt=""
                     />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
+                <Navbar.Toggle onClick={() => setToggle(true)} aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse className={`${toggle && 'bg-black'} w-100`} id="responsive-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link as={Link} to="">
                             <h6 className='navLink'>Home </h6>
@@ -77,12 +77,6 @@ const NavMenu = () => {
                     </Nav>
                     <Nav>
                         {
-                            user?.email &&
-                            <Nav.Link as={Link} to="/">
-                                <h5 className='navLink'>{user?.displayName.split(" ")[0]}</h5>
-                            </Nav.Link>
-                        }
-                        {
                             user?.photoURL === null && !user?.email ?
 
                                 <Nav.Link as={Link} to="#">
@@ -94,6 +88,12 @@ const NavMenu = () => {
                                 </Nav.Link>
                         }
                         {
+                            user?.email &&
+                            <Nav.Link as={Link} to="/">
+                                <h5 className='navLink'>{user?.displayName.split(" ")[0]}</h5>
+                            </Nav.Link>
+                        }
+                        {
                             !user?.email ?
                                 <Nav.Link as={Link} to="/login">
                                     <button className='btn-outline'>Sign in</button>
@@ -103,22 +103,22 @@ const NavMenu = () => {
                                     <button onClick={handleSignOut} className='btn-outline'>Sign out</button>
                                 </Nav.Link>
                         }
-                        <Nav.Link as={Link} to="">
+                        <Nav.Link as={Link} to="/cartHome">
+                            <div className='mt-2'>
+                                <div className="linkText"> <small>{cartItem}</small> </div>
+                                <div className="icon">
+                                    <i className="fa-solid fa-cart-shopping navIcon"></i>
+                                </div>
+                            </div>
+                        </Nav.Link>
+                        {/* <Nav.Link as={Link} to="">
                             <div className='mt-2'>
                                 <div className="linkText">0</div>
                                 <div className="icon">
                                     <i className="fa-solid fa-heart navIcon"></i>
                                 </div>
                             </div>
-                        </Nav.Link>
-                        <Nav.Link as={Link} to="/cartHome">
-                            <div className='mt-2'>
-                                <div className="linkText">{cartItem}</div>
-                                <div className="icon">
-                                    <i className="fa-solid fa-cart-shopping navIcon"></i>
-                                </div>
-                            </div>
-                        </Nav.Link>
+                        </Nav.Link> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container >
