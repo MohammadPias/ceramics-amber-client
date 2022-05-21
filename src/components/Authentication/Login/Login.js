@@ -24,8 +24,8 @@ const Login = () => {
         handleSignin(email, password, navigate, destination)
     };
     return (
-        <div className="d-flex align-items-center justify-content-center vh-100">
-            <div className='formContainer'>
+        <div className="d-flex justify-content-center align-items-center vh-100 p-4">
+            <div className='formContainer max-w-50'>
                 <h5>Login</h5>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='Email' type="email" {...register("email", { required: true })} />

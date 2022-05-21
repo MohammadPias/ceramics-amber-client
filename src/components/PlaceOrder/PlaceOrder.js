@@ -78,40 +78,42 @@ const PlaceOrder = () => {
                 <Contact formData={formData} setFormData={setFormData} />
     }
     return (
-        <div className='w-50 mx-auto mt-5'>
-            <div className="heading-light">
-                <h5 className="text-center fw-bold">
-                    Place Your <span>Orders</span>
-                </h5>
-            </div>
-            <div className="">
-                <div className="header">
-                    <div className="progress-container">
-                    </div>
-                    <div style={{ width: page === 0 ? '33.3%' : page === 1 ? '66.6%' : '100%' }} className="progress-bar">
-                    </div>
-                    <h6 className="text-center fw-bold mt-3">
-                        {pageTitles[page]}
-                    </h6>
+        <div className='d-flex justify-content-center align-items-center p-4'>
+            <div className='max-w-75 mx-auto mt-5'>
+                <div className="heading-light">
+                    <h5 className="text-center fw-bold">
+                        Place Your <span>Orders</span>
+                    </h5>
                 </div>
-                <div className="body">{displayPage()}</div>
-                <div className="footer d-flex justify-content-between">
-                    <button
-                        disabled={page === 0}
-                        onClick={() => setPage((currPage) => currPage - 1)}
-                        className="btn-outline-sm"
-                    >Prev</button>
-                    <button
-                        onClick={() => {
-                            if (page === pageTitles.length - 1) {
-                                handlePlaceOrder(formData);
-                            }
-                            else {
-                                setPage((currPage) => currPage + 1)
-                            }
-                        }}
-                        className="btn-regular"
-                    >{page === pageTitles.length - 1 ? 'Submit' : 'Next'}</button>
+                <div className="">
+                    <div className="header">
+                        <div className="progress-container">
+                        </div>
+                        <div style={{ width: page === 0 ? '33.3%' : page === 1 ? '66.6%' : '100%' }} className="progress-bar">
+                        </div>
+                        <h6 className="text-center fw-bold mt-3">
+                            {pageTitles[page]}
+                        </h6>
+                    </div>
+                    <div className="body">{displayPage()}</div>
+                    <div className="footer d-flex justify-content-between">
+                        <button
+                            disabled={page === 0}
+                            onClick={() => setPage((currPage) => currPage - 1)}
+                            className="btn-outline-sm"
+                        >Prev</button>
+                        <button
+                            onClick={() => {
+                                if (page === pageTitles.length - 1) {
+                                    handlePlaceOrder(formData);
+                                }
+                                else {
+                                    setPage((currPage) => currPage + 1)
+                                }
+                            }}
+                            className="btn-regular"
+                        >{page === pageTitles.length - 1 ? 'Submit' : 'Next'}</button>
+                    </div>
                 </div>
             </div>
         </div>

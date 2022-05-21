@@ -31,12 +31,15 @@ const OrdersCard = ({ orderCart, order }) => {
                                     order?.paymentStatus &&
                                     <small className='bg-green px-5 py-2 d-inline-block mt-2 rounded-pill my-2'>Paid</small>
                                 }
-                                <div className='d-flex justify-content-between align-items-center my-2'>
+                                <div className='d-flex justify-content-between  my-2'>
                                     {!order?.paymentStatus &&
-                                        <small className='bg-red px-5 py-2 d-inline-block mt-2 rounded-pill'>Not Paid</small>
+                                        <button className="btn-outline-sm my-2 bg-red">Not Paid</button>
                                     }
-                                    {!order?.paymentStatus && order?.email === user?.email && <Link to={`payment/${order?._id}`}>
-                                        <button className="btn-regular my-2">Make Payment </button>
+                                    {!order?.paymentStatus && order?.email === user?.email && <Link
+                                        to={`payment/${order?._id}`}
+                                        className='text-decoration-none'
+                                    >
+                                        <button className="btn-regular my-2 ">Make Payment </button>
                                     </Link>}
                                 </div>
                             </div>
