@@ -4,9 +4,9 @@
 
 ## Project Details
 
-\*\* Ceramic Amber is online niche platform in where ceramic products will be found. Here a user can see all products and add products to cart. Cart will be stored in 'Local Storage' . As a result user can see his/her cart whenever he browse this site. When user will want to place order, user will be gone Login/Register page. After successfully registration user will be redirected to place order route and user will see a dashboard page. In my order page, user can track order processing.
+\*\* Ceramic Amber is an online niche platform in which ceramic products will be found. Here a user can see all products and add products to the cart. The cart will be stored in 'Local Storage'. As a result, users can see cart whenever they browse this site. When users will want to place an order, users will be gone Login/Register page. After successfully registering users will be redirected to the place order route and users will see a dashboard page. On my order page, users can track order processing.
 
-\*\* An admin will see additional route such as Manage User, Manage Order, Add Product, Manage Products etc. Admin can add, delete user and also can add admin.
+\*\* An admin will see additional routes such as Manage Users, Manage Orders, Add Products, Manage Products, etc. Admin can add, delete users, and also can add admin.
 
 ### Ceramic Amber is a Fullstack project. In front-end Technologies, React, React-router-dom, React-bootstrap, React-hook-form, FontAwesome icons are used to build this site.
 
