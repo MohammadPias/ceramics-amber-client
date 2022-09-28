@@ -12,7 +12,7 @@ import reportWebVitals from './reportWebVitals';
   document.getElementById('root')
 ); */
 
-document.body.style = 'background: #e9e9e9';
+document.body.style.backgroundImage = "linear-gradient(to right , #ebebeb, #bdbbb7)";
 const container = document.getElementById('root')
 const root = createRoot(container)
 root.render(<App />)
